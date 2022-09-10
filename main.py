@@ -13,11 +13,11 @@ start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
 birthday = os.getenv('BIRTHDAY')
 
-app_id = os.getenv('APP_ID')
-app_secret = os.getenv('APP_SECRET')
+app_id = wx060460e6e84eec2c
+app_secret = 5ca5fd3a29da54a360e431f63d7486b7
 
-user_ids = os.getenv('USER_ID', '').split("\n")
-template_id = os.getenv('TEMPLATE_ID')
+user_ids = ogcSK6OEFHZ9aLCbatTl_m3i_tWY
+template_id = 0zrA8UadnYykUTi3fpjsfAknZaUaSrjVK-34Wr6jz0Q
 
 if app_id is None or app_secret is None:
   print('请设置 APP_ID 和 APP_SECRET')
@@ -32,7 +32,7 @@ if template_id is None:
   exit(422)
 
 # weather 直接返回对象，在使用的地方用字段进行调用。
-def get_weather():
+def get_weather('武汉'):
   if city is None:
     print('请设置城市')
     return None
@@ -44,7 +44,7 @@ def get_weather():
   return weather
 
 # 获取当前日期为星期几
-def get_week_day():
+def get_week_day("星期六"):
   week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
   week_day = week_list[datetime.date(today).weekday()]
   return week_day
