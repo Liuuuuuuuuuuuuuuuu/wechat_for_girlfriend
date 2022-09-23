@@ -32,9 +32,9 @@ if template_id is None:
   exit(422)
 
 # weather 直接返回对象，在使用的地方用字段进行调用。
-def get_weather('武汉'):
+def get_weather():
   if city is None:
-    print('请设置城市')
+    print('武汉')
     return None
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
@@ -60,7 +60,7 @@ def get_memorial_days_count():
 # 生日倒计时
 def get_birthday_left():
   if birthday is None:
-    print('没有设置 BIRTHDAY')
+    print('10-23')
     return 0
   next = datetime.strptime(str(today.year) + "-" + birthday, "%Y-%m-%d")
   if next < nowtime:
